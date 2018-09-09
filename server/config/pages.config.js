@@ -5,11 +5,6 @@ const Pages=
         "link": "index",
         "title":"jithu"
     },
-    {
-        "page": "login",
-        "link": "login",
-        "title":"Welcome to login page"
-    },
      {
         "page": "dashboard",
         "link": "dashboard",

@@ -6,13 +6,15 @@ const UserSchema = require("../model/user.schema")
  * Once a user is logged in, they will be sent to the dashboard page.
  */
 function UserLogin(req, res) {
-    UserSchema.User.findOne({ email: req.body.email }, 'firstName lastName email password data', function (err, user) {
+    var _email=req.body.email||req.query.email;
+    var _password=req.body.password||req.query.password;
+    UserSchema.User.findOne({ email: _email }, 'firstName lastName email password data', function (err, user) {
         if (!user) {
             //res.render('login.jade', { error: "Incorrect email / password.", csrfToken: req.csrfToken() });
             res.send({ error: "Incorrect email / password." })
         } else {
-            if (bcrypt.compareSync(req.body.password, user.password)) {
-                // utils.createUserSession(req, res, user);
+            if (bcrypt.compareSync(_password, user.password)) {
+                req.session.user = user;
                 res.redirect('/dashboard');
             } else {
                 res.send({ error: "Incorrect email / password." })
