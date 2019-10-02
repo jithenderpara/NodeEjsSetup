@@ -83,7 +83,7 @@ app.get('*', function(req, res) {
  */
 let http = require('http').Server(app);
 let io = require('socket.io')(http);
-let port = 8080;
+var port = process.env.PORT || config.serverport;
 var users = {};
 var salesRep = {};
 //listen on every connection
