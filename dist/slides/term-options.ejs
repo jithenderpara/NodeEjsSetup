@@ -1,0 +1,109 @@
+<link rel="stylesheet" type="text/css" href="<%= apppath %>/slides/bootstrap-slider.css">
+<script type="text/javascript" src="/js/libs/bootstrap-slider.min.js"></script>
+<div class="slides_div" id="term-option" style="position: relative;float:left;;background: #fff">
+   <div class="slides_inner">
+      <div>
+         <div class="goalassement">
+            <img width="100%" style="height: 65px;" src="<%= apppath %>/slides/images/slide_Header.gif" />
+            <span style="position: absolute; top: 10px; float: right; right:0px;">
+               <% if (logotimberline) { %>
+               <img style="max-width: 300px;
+                  max-height: 50%;
+                  height: 50px;
+                  margin-top: -7px;font-weight:bold;" src="<%= apppath %>/images/timberline.png" alt="timberline">
+               <% } %>
+               <% if (financelogo) { %>
+               <img class="logo_resp" style="width: 70%; float: right;" src="<%= apppath %>/slides/images/Finance-Solution_LOGO_Header-.png" alt="financesolutions">
+               <% } %>
+               <!-- <img width="70%" src="/slides/images/Finance-Solution_LOGO_Header-.png"> -->
+            </span>
+            <span style="position: absolute;top: 17px;left: 22px;text-align: left;float: left;color: black;font-size: 28px;font-weight: 500;font-weight:bold">Term Options</span>
+            <div style="margin-bottom: -15px;">
+               <table id="term-optiontabale" cellpadding="5" cellspaceing="10" class="table" style="margin:10px; width:90%; margin:auto">
+                  <tr style="font-weight:bold; font-size:18px;color:black;text-align: center;
+                     ">
+                     <td>Months</td>
+                     <td >Monthly Payment</td>
+                     <td>Payment Reduction</td>
+                  </tr>
+                  <tr class="get15K_lowValue">
+                     <td style="background:#1a4b8d;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center">12 Months</td>
+                     <td id="12monthlypayment" style="background:#2862A0;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center"></td>
+                     <td id="12payoff" style="background:#226FC0;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center"></td>
+                     </tr>
+                  <tr>
+                     <td style="background:#1a4b8d;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center">24 Months</td>
+                     <td id="24monthlypayment" style="background:#2862A0;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center"></td>
+                     <td id="24payoff" style="background:#226FC0;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center"></td>
+                  </tr>
+                  <tr class="get15K_aboveValue">
+                     <td style="background:#1a4b8d;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center">36 Months</td>
+                     <td id="36monthlypayment" style="background:#2862A0;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center"></td>
+                     <td  id="36payoff" style="background:#226FC0;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center"></td>
+                  </tr>
+                  <tr class="get15K_aboveValue">
+                     <td id="maxterm" style="background:#1a4b8d;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center"></td>
+                     <td id="termmonthlypayment" style="background:#2862A0;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center"></td>
+                     <td id="termpayoff" style="background:#226FC0;color:#fff;border: 3px solid white;font-weight:bold; font-size:18px;text-align: center"></td>
+                  </tr>
+               </table>
+            </div>
+            <div>
+               <br>
+               <br>
+            </div>
+            <div class="col-md-12" style="height: 30px;">
+               <div class="float-left m-2" 
+                  style="padding-top: 20px;font-weight:bold; font-size:15px;color:black;width: 100px;
+                  float: left;margin-left:45px !important">PROGRAM
+                  <br> TERM
+               </div>
+               <div class="prograssbar float-left  m-2" style=" width: 430px;
+                  display: inline-block;   float: none !important;margin-top: 33px !important; color:black;">
+                  <!-- <div id="prograssbar"></div> -->
+                  <ul id="stepprogress" class="stepprog_resp" style="  height: 23px;  position: relative;;background-color: #ccc;border-top-left-radius: 
+                     10px;display:block;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;
+                     padding: 0;margin: auto;">												
+                  </ul>
+               </div>
+               <div class="float-left m-2 paymentText" id="paymentText_resp" style="float: right !important;
+                  font-weight: bold;
+                  font-size: 19px;
+                  color: black;
+                  background: #e3e3e3;
+                  width: 212px;
+                  height: 80px;
+                  border-radius: 12px;
+                  padding: 10px;
+                  text-align: center;
+                  border: 1px solid #9b9999;
+                  margin-right: 35px !important;">
+                  <strong>
+                  <label id="paymentText"></label>
+                  <br>Monthly Payment
+                  </strong>
+               </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-md-12">
+               <br>
+               <p class="text:left" style="display: block;float: left;margin-top: 29px;">Your actual results can be influenced by factors outside of our control including your ability to make consistent
+                  payments to your savings account in the agreed upon amount and the willingness of your creditors to negotiate settlements. The payment calculations shown in this presentation assume
+                  1) As of January 2017, resolutions average 42% of the amount of clients' debts at the time of enrollment, 2) Inclusion of all fees associated with the program, 3) No litigation within your program, and 4) The payment term that you have chosen.
+               </p>
+            </div>
+         </div>
+      </div>
+      <p style="color:#9f9f9f;display: block;float: left">The information provided is for informational purposes only 
+               and does not establish an attorney-client or
+               business relationship between you and 
+               <% if (logotimberline) { %>
+            Timberline Financial
+         <% } %>
+         <% if (financelogo) { %>
+         Finance Solutions
+         <% } %> or
+               any law firm or business entity to which you may be
+               referred.</p>
+   </div>
+</div>

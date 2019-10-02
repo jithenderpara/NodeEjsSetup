@@ -1,0 +1,117 @@
+.reg-html{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 35px 70px 50px 70px;  
+}
+
+.r-input{
+    border: 2px solid;
+    border-image: linear-gradient(270deg,#7d78f0 1%,#3cdcd2);
+    border-image-slice: 1;      
+    padding:15px 90px;    padding:15px 90px;
+
+}
+
+.mT{
+    margin-top: 15px;
+}
+
+.register{
+    width: 100%;
+    height: 20%;
+    /* top: 20%; */
+    margin: auto;
+    /* margin-top: 6%; */
+    max-width: 525px;
+    min-height: 642px;
+    position: relative;
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+    }
+
+.header{
+    text-align: center;
+}
+
+.header span{
+    font-size: 40px;
+}
+
+@media (max-width: 320px) {
+    .r-input{
+    border: 2px solid;
+    border-image: linear-gradient(270deg,#7d78f0 1%,#3cdcd2);
+    border-image-slice: 1;
+    padding:15px 10px;
+    margin-left: -32px;
+    }
+
+    .header span{
+    font-size: 17px;
+    }
+
+    .mT{
+    margin-top:0px;
+    }
+
+}
+
+@media  (min-width: 320px) and (max-width: 420px){
+        .r-input{
+
+    border: 2px solid;
+    border-image: linear-gradient(270deg,#7d78f0 1%,#3cdcd2);
+    border-image-slice: 1;
+    padding:15px 22px;
+    }
+
+ .header span{
+
+    font-size: 27px;
+    }
+
+ .mT{
+    margin-top:0px;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 920px){
+    .r-input{
+    border: 2px solid;
+    border-image: linear-gradient(270deg,#7d78f0 1%,#3cdcd2);
+    border-image-slice: 1;
+    padding:15px 22px;
+    margin-left: -30px;
+
+    }
+
+    .header span{
+
+        font-size: 27px;
+    } 
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    background: #ccc;
+    padding: 5px;
+}
+.logout {
+    color: #fff;
+  }
+  .logout:hover {
+    color: #fff;
+  }
+  form label.error {
+    color: #9d2b2b !important;
+    font-size: 14px;
+    margin: 10px;
+    /* display: none !important; */
+}
+form select.error, form input.error{
+    border: 1px solid #9d2b2b !important;
+}

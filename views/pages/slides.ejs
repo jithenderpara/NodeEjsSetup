@@ -1,0 +1,487 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+  <head>
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+<html lang="en">
+ <% include ../partials/header %>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <h3><%= title %></h3>
+        <% if (Clientdetails.slidetype=='documents') { %>
+         
+         <div class="col-md-12 col-sm-12">
+       
+          <nav aria-label="breadcrumb" class="breadcrumbContainer">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active"> <a  aria-current="page">slides</a></li>
+            
+              
+            
+            </ol>
+          </nav>
+        </div>
+          <% } %>
+        
+        <br />
+        <main role="main" class="col-md-12 ml-sm-auto col-lg-12 pt-3 col-sm-12" >
+          <input type="hidden" value="<%= Mgremailid %>" id="mgremailid" />
+          <input
+            type="hidden"
+            value="<%= Clientdetails.leadid %>"
+            id="leadid"
+          />
+
+          <div class="row">
+            <div class="col-md-4 col-lg-2 col-sm-12">
+              <!--
+                <div class="btn-group viewdetails">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <strong> Rebuttals</strong>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button">Litigation</button>
+                        <button class="dropdown-item" type="button">Taxes</button>
+                        <button class="dropdown-item" type="button">Calculator</button>
+                    </div>
+                </div>
+              -->
+              <!-- secound -->
+
+              <div class="btn-group viewdetails">
+                <div class="col-md-12 text-center">
+                  <!--<button type="button" id="showpointer" class="btn btn-default" style="margin: 13px;position: relative;z-index: 9; background-color: #BEBEBE;border-radius:8px">
+                    Show Pointer
+                  </button>-->
+                
+                  <button type="button"
+                  class="btn btn-primary dropdown-toggle"
+                  id="addtionalslides_info"
+                  data-toggle="dropdown"
+                  style ="margin: 13px;
+                  position: relative;
+                  z-index: 9;
+                  color:black;
+                  background-color: #BEBEBE;border-radius:8px"
+                  
+                  >
+                   Additional Information
+                </button>  
+                
+                <div class="dropdown-menu dropdown-menu-right" id="addtionalslides" style="position: relative;
+                z-index: 9;
+               ">
+               <!-- finance solutions -->
+               <button aria-controls="fico" value="fico" class="dropdown-item">
+                <i class="fab fa-fonticons"></i>&nbsp;&nbsp;
+                Fico
+               </button>
+                    <button aria-controls="client_savings" value="client_savings" class="dropdown-item" >
+                     <i class="fas fa-piggy-bank"></i>&nbsp;&nbsp;
+                   Client_savings
+                  </button>
+                  <button aria-controls="company_you_trust" value="company_you_trust" class="dropdown-item" >
+                  <i class="fas fa-smile"></i> &nbsp;&nbsp; 
+                    Company You trust
+                   </button> 
+                   <button aria-controls="pay_back" value="pay_back" class="dropdown-item" >
+                    <i class="fas fa-hand-holding-usd"></i>&nbsp;&nbsp;
+                    Pay Back 
+                   </button> 
+                    <button  aria-controls="cc_cost" value="cc_cost" class="dropdown-item" >
+                    <i class="fas fa-credit-card"></i>&nbsp;&nbsp;
+                    Credit Card Cost
+                   </button> 
+                   <button  aria-controls="dti_factor" value="dti_factor" class="dropdown-item" >
+                    <i class="fas fa-file-invoice-dollar"></i> 
+                    DTI factor 
+                   </button>  
+                   <button aria-controls="cons_alternatives" value="cons_alternatives" class="dropdown-item" >
+                   <i class="fas fa-sync-alt"></i>
+                    Consolidation 
+                   </button> 
+                   <button aria-controls="loan_options" value="loan_options" class="dropdown-item" >
+                    <i class="fas fa-tasks"></i>
+                    Loan Options
+                    </button> 
+                     <button aria-controls="fico9ccm" value="fico9ccm" class="dropdown-item" >
+                   <i class="fas fa-search-dollar"></i>
+                    Fico 9 CCM
+                    </button> 
+                     <button aria-controls="fico_9cs" value="fico_9cs" class="dropdown-item" >
+                    <i class="fas fa-coins"></i>
+                    Fico 9 CS
+                    </button> 
+
+                  <!--<button data-src="slides/Rebuttals/Finance-rebuttals/Close Accounts.PNG" value="close Accounts" class="dropdown-item" >
+                    Close Accounts
+                  </button>
+                  <button data-src="slides/Rebuttals/Finance-rebuttals/credit score survey.PNG" value="credit Score Survey" class="dropdown-item"  >Credit Score Survey</button>
+                  <button data-src="slides/Rebuttals/Finance-rebuttals/Creditor calls.PNG" value="creditor Calls" class="dropdown-item" >
+                    Creditor Calls
+                   </button>
+                   <button data-src="slides/Rebuttals/Finance-rebuttals/Fico 9 and ccm.PNG" value="fico9 and ccm" class="dropdown-item" >
+                     Fico9 and ccm
+                   </button>
+                   <button data-src="slides/Rebuttals/Finance-rebuttals/FICO 9.0 and ur credit score.PNG" value="Fico 9.0&ur credit score" class="dropdown-item" >Fico 9.0 and ur credit score</button>
+                   <button data-src="slides/Rebuttals/Finance-rebuttals/FIco Graphic.PNG" value="Fico Graphic" class="dropdown-item" >
+                    Fico Graphic
+                   </button> -->
+                   <!-- video -->
+                   <!-- <button data-type="video" data-src="slides/Rebuttals/Finance-rebuttals/How Will FICO 9.0 Affect Your Credit Score.mp4" value="how will Fico 9.0 affect" class="dropdown-item" >
+                     How will Fico 9.0 affect
+                   </button> -->
+                   <!-- video -->
+                   <!-- <button data-type="video" data-src="slides/Rebuttals/Finance-rebuttals/Learn About the FICO Auto Credit Score.mp4" value="about Fico,Auto Credit score" class="dropdown-item" >About Fico,Auto Credit score</button> -->
+                   
+                   <!-- <button data-src="slides/Rebuttals/Finance-rebuttals/Offset1.PNG" value="Offset" class="dropdown-item">Offset</button>
+                   <button data-src="slides/Rebuttals/Finance-rebuttals/Security clearance.PNG" value="Security clearance" class="dropdown-item" >Security clearance</button> -->
+                  
+                  
+
+                </div>
+              </div>
+              </div>
+              <div class="btn-group viewdetails">
+                <!-- <button
+                  type="button"
+                  class="btn btn-secondary dropdown-toggle"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <strong> Information</strong>
+                </button> -->
+
+                <div class="dropdown-menu dropdown-menu-right" id="Information">
+                  <button class="dropdown-item" type="button">
+                    Finance Solutions
+                  </button>
+                  <button class="dropdown-item" type="button">
+                    Cap one settlement Letter
+                  </button>
+                  <button class="dropdown-item" type="button">
+                    Finance Solutions Reviews
+                  </button>
+                </div>
+              </div>
+              <!--
+                <div class="btn-group viewdetails">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <strong> Additional</strong>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <button class="dropdown-item" type="button">Program Logistics</button>
+                        <button class="dropdown-item" type="button">Testimonials</button>
+                        <button class="dropdown-item" type="button">Program Overview in Spanish</button>
+                    </div>
+                </div>
+              -->
+            </div>
+            <div class="col-md-8 col-lg-8 col-sm-12">
+              <div  class="slidecontainer" id="slidecontainer" style="position: relative; height:auto !important;min-height: 300px;overflow: auto;">
+                <!-- <section id="Rebuttals1_div" class="scs-workspace-v3 homepage-border-Default"> -->
+                  
+                    <div class="pointerdiv" id="pointerdiv" style="display: none; position: fixed;z-index: 999;">
+                        <img style='width: 60px;margin:-13px' src='/images/mouse-pointer.svg'>
+                      </div>
+                <div>
+                
+                  <!-- Tab panes -->
+                    <div class="tab-content" id="tab-content" style="font-family:Arial, Helvetica, sans-serif">
+                    <div role="tabpanel" style="display:block" class="tab-pane active Modification" id="slide_1" data-value="IN" data-addToPDF="true">
+                      <div class="innderDiv" style="background:#fff;width:100%" id="Introduction">
+                        <% include ../../dist/slides/Introduction %>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="slide_2" data-value="FG" data-addToPDF="true">                    
+                      <div class="innderDiv" style="background:#fff;width:100%" id="your_financial">
+                      <% include ../../dist/slides/your_financial_goalasssment_02 %>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="slide_3" data-value="YA" data-addToPDF="true">                    
+                      <div class="innderDiv" style="background:#fff;width:100%" id="your_analysis">
+                    <% include ../../dist/slides/your_analysis %>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="slide_4" data-value="FP" data-addToPDF="true">
+                      <div class="innderDiv" style="background:#fff;width:100%" id="Fin_Path">
+                    <% include ../../dist/slides/Current_financial_path %>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="slide_5" data-value="WCH" data-addToPDF="true">
+                      <div class="innderDiv" style="background:#fff;width:100%" id="how_we_can">
+                    <% include ../../dist/slides/how_we_can_help_you %>
+                      </div>
+                    </div>
+                     <div role="tabpanel" class="tab-pane" id="slide_6"  style="height: 1090px;" data-value="TO" data-addToPDF="true">
+                      <div class="innderDiv" style="background:#fff;width:100%" id="term-option">
+                      <% include ../../dist/slides/term-options %>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="slide_7" data-value="MD" data-addToPDF="true">
+                      <div class="innderDiv" style="background:#fff;width:100%" id="Modification">
+                    <% include ../../dist/slides/creditcard_modification %>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="slide_8"  data-value="PRG" data-addToPDF="true">
+                      <div class="innderDiv" style="background:#fff;width:100%">
+                    <% include ../../dist/slides/program_conditions %>
+                      </div>  
+                  </div>
+                   
+                     <div role="tabpanel" class="tab-pane" id="slide_9"  style="height: 1070px;" data-value="SUM" data-addToPDF="true">
+                       <div class="innderDiv" style="background:#fff;width:100%" id="summary">
+                    <% include ../../dist/slides/summary %>
+                    </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="slide_10" data-value="RM" data-addToPDF="true">
+                       <div class="innderDiv" style="background:#fff;width:100%" id="RoadMap">
+                    <% include ../../dist/slides/road_map_to_settlement %>
+                    </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" data-value="FIC" id="fico">
+                        <div class="innderDiv" style="background:#fff;width:100%">
+                          <% include ../../dist/slides/Rebuttals/fico %>
+                        </div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane" data-value="CS" id="client_savings" style="margin-top:-10px">
+                        <div class="innderDiv" style="background:#fff;width:100%;margin-top:-10px">
+                        <% include ../../dist/slides/Rebuttals/client_savings %>
+                        </div>
+                      </div>
+
+                      <div role="tabpanel" class="tab-pane" data-value="CYT" id="company_you_trust">
+                        <div class="innderDiv" style="background:#fff;width:100%">
+                        <% include ../../dist/slides/Rebuttals/company_you_trust %>
+                        </div>
+                      </div>
+ 
+                      <div role="tabpanel" class="tab-pane" data-value="PB" id="pay_back">
+                        <div class="innderDiv" style="background:#fff;width:100%">
+                        <% include ../../dist/slides/Rebuttals/pay_back %>
+                        </div>
+                      </div>
+                        
+                      <div role="tabpanel" class="tab-pane" data-value="CA" id="cons_alternatives">
+                        <div class="innderDiv" style="background:#fff;width:1100px;max-width: 1100px;margin: 0;">
+                        <% include ../../dist/slides/Rebuttals/cons_alternatives %>
+                        </div>
+                      </div>
+
+                      <div role="tabpanel" class="tab-pane" data-value="LO" id="loan_options">
+                        <div class="innderDiv" style="background:#fff;width:1100px;max-width: 1100px;margin: 0;">
+                        <% include ../../dist/slides/Rebuttals/loan_options %>
+                        </div>
+                      </div>
+
+                      <div role="tabpanel" class="tab-pane" data-value="DTI" id="dti_factor">
+                          <div class="innderDiv" style="background:#fff;width: 1000px;max-width: 1000px;">
+                          <% include ../../dist/slides/Rebuttals/dti_factor %>
+                          </div>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane" data-value="CCC" id="cc_cost">
+                            <div class="innderDiv" style="background:#fff;width:900px;max-width:900px">
+                            <% include ../../dist/slides/Rebuttals/cc_cost %>
+                            </div>
+                          </div>
+
+                          <div role="tabpanel" class="tab-pane" data-value="CCM" id="fico9ccm">
+                            <div class="innderDiv" style="background:#fff;width:900px;max-width:900px">
+                            <% include ../../dist/slides/Rebuttals/fico9ccm %>
+                            </div>
+                          </div>
+
+                          <div role="tabpanel" class="tab-pane" data-value="FCS" id="fico_9cs">
+                            <div class="innderDiv" style="background:#fff;width:900px;max-width:900px">
+                            <% include ../../dist/slides/Rebuttals/fico_9cs %>
+                            </div>
+                          </div>
+                  </div>
+                  
+                  <div id="addtional-slide-content">
+
+                  </div>
+                  
+              </div>
+              <!-- tabs end  -->
+                </section>
+                <!-- end slider -->
+                
+              </div>
+            </div>
+            <div class="col-md-2 col-lg-2 col-sm-12">
+            <h4 class="listHeading">Added to PDF</h4>
+            <ul class="slideItemsList" id="slideItemsList">
+           
+            </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 text-center" >
+              <div class="boxcontainer" id="boxcontainer">
+<!-- Nav tabs -->
+                  <ul class="nav nav-tabs" role="tablist" id="sortable">
+                    <!-- <li role="presentation"><a href="#" class="active" aria-controls="Introduction" role="tab" data-toggle="tab">
+                    <i class="far fa-comment-dots"> </i>
+                  <strong>Introduction</strong>
+                    </a></li>
+                    <li role="presentation"><a href="#" aria-controls="Fin_Goals" role="tab" data-toggle="tab">
+                     <i class="fas fa-user-alt"></i> <strong> Fin_Goals</strong>
+                    </a></li>
+                    <li role="presentation"><a href="#" aria-controls="YourAnalysis" role="tab" data-toggle="tab"> 
+                    <i class="fas fa-info-circle"></i>
+                  <strong>Your Analysis</strong></a></li>
+                    <li role="presentation"><a href="#" aria-controls="Fin_Path" role="tab" data-toggle="tab"> 
+                    <i class="fas fa-dollar-sign"></i> <strong>Fin_Path</strong></a></li>
+                     <li role="presentation"><a href="#" aria-controls="WeCanHelp" role="tab" data-toggle="tab"> 
+                    <i class="fas fa-hands-helping"></i>
+                  <strong>We Can Help</strong>
+                    </a></li>
+                    <li role="presentation"><a href="#" aria-controls="TermOptions" role="tab" data-toggle="tab"> 
+                        <i class="fas fa-sitemap"></i> <strong>Term Options</strong>
+                      </a></li>
+                    <li role="presentation"><a href="#" aria-controls="Modification" role="tab" data-toggle="tab"> 
+                    <i class="fas fa-credit-card"></i>
+                  <strong>Modification</strong>
+                    </a></li>
+                    <li role="presentation"><a href="#" aria-controls="Program" role="tab" data-toggle="tab"> 
+                     <i class="fas fa-chalkboard-teacher"></i>
+                  <strong>Program</strong>
+                    </a></li>
+                    
+                    <li role="presentation"><a href="#" aria-controls="Summary" role="tab" data-toggle="tab"> 
+                      <i class="fas fa-sliders-h"></i> <strong>Summary</strong>
+                    </a></li>
+                    <li role="presentation"><a href="#" aria-controls="RoadMap" role="tab" data-toggle="tab"> 
+                      <i class="fas fa-map-signs"></i> <strong>Road Map</strong>
+                    </a></li> -->
+                  </ul>
+              </div>
+            </div>
+          </div>
+          <!-- <button type="button" class="btn btn-primary">Send</button> -->
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-toggle="modal"   
+            id="save_presentation"
+            style="margin-right: 23%"
+          >
+            End
+          </button>
+
+          <!-- <div id="clientOnline"></div> -->
+        </main>
+      </div>
+    </div>
+
+    <footer><% include ../partials/footer-logo %></footer>
+
+    <!-- Modal -->
+    <div id="emailModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Presentation</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <div class="modal-body">
+          <form id="otherlabelemailForm">
+            Do you want to send the presentation to the client email below?
+                        <div id="presentationEmailid"><input type="checkbox" id="labelemailcheck" checked="checked"><label for="labelemailcheck" id="labelemail"></label></div>
+                      <input type="email" class="input valid" value="" name="otherlabelemail" id="otherlabelemail" aria-invalid="false" style="width:100%">
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-default"
+              id="save_send_presentation">
+              Send
+            </button>
+            </form>
+            <!--<button
+              type="button"
+              class="btn btn-default"
+              id="save_presentation">
+              No
+            </button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:none"><div id="pdfDiv"></div></div>
+    <!--
+      <a class="media" href="/docs/Summit Test Agreement.pdf">PDF File</a>
+    -->
+    <!--
+      <script type="text/javascript" src="http://github.com/malsup/media/raw/master/jquery.media.js?v0.92"></script>
+    -->
+    <script
+      type="text/javascript"
+      src="/js/libs/jquery.media.js"
+    ></script>
+    <script src="/js/libs/html2canvas.min.js"></script>
+    <script src="/js/libs/socket.io.js"></script>
+
+    <script>
+      
+      
+      var _Isharing = false,ismouseMove=false;
+      var clientdata,
+      salesToolData,
+      isclientOnline=false,
+      clientId="oKn4jzoUOVZ7JlhAxkrJ7fGS7xt4Zo",
+        _userslides = [],
+        currentpage,
+         ChangedEmailid,
+         _host = window.location.origin;
+        var socket = io('ws://localhost:3000', {transports: ['websocket']});
+socket.on('connect', function () {
+  console.log('connected!');
+  shareTestFun();
+  socket.emit('greet', { message: 'Hello Mr.Server!' });
+  socket.on("NewClients", function(data) {
+          if (data.indexOf(clientId) > -1) {
+            $("#clientOnline").html("User Connected");
+            isclientOnline=true;
+            _Isharing = true;
+             $("#clientOnline").show();
+            sharescreen()
+          }
+          
+          //  else {
+          //   sharescreen()
+          //   $("#clientOnline").hide();
+          //   $("#clientOnline").html("User Not Connected");
+          // }
+        });
+});
+
+socket.on('respond', function (data) {
+  console.log(data);
+});
+        
+        function shareTestFun(){
+            var _htmlDiv=$(".tab-pane.active").html();
+          let sendObj = { name: clientId, htmlContent:_htmlDiv ,presentationType:"slides", Isonline:true };
+              socket.emit("send HTMLmessage", sendObj);
+      }
+      function sharescreen(){
+    if (_Isharing&&isclientOnline) {
+          var _htmlDiv=$(".tab-pane.active").html();
+          let sendObj = { name: clientId, htmlContent:_htmlDiv ,presentationType:"slides", Isonline:true };
+              socket.emit("send HTMLmessage", sendObj);
+        }
+      }
+    </script>
+
+  </body>
+</html>

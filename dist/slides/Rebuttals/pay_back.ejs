@@ -1,0 +1,71 @@
+<div class="slides_div" style="position: relative;float:left;background: #fff; font-family:arial;">
+   <header>
+      <img style="max-width: 100%;max-height: 100%;height: 65px;" width="100%" src="<%= apppath %>/slides/images/slide_Header.gif" />
+      <span style="position: absolute; top: 10px; float: right; right:0px;">
+      <% if (logotimberline) { %>
+      <img style="max-width: 290px;
+         max-height: 50%;
+         height: 50px;
+         margin-top: -7px;font-weight:bold;" src="<%= apppath %>/images/timberline.png" alt="timberline">
+      <% } %>
+      <% if (financelogo) { %>
+      <img class="logo_resp" style="width: 70%; float: right;
+         " src="<%= apppath %>/slides/images/Finance-Solution_LOGO_Header-.png" alt="financesolutions">
+      <% } %>
+      </span>
+      <span style="position: absolute;top: 17px;left: 22px;text-align: left;float: left;color: black;font-size:
+         28px;font-weight: 500;font-family: arial;font-weight:bold">Will you payback</span>
+   </header>
+   <div class="slides_inner">
+      <p style="font-size: 26px;padding-top: 25px;margin-left: 25px;color:black">
+         Use the function below to confirm how long you've been making payments
+      </p>
+      <div class="col-md-12">
+         <div class="prograssbar float-left  m-2" style=" width: 430px;margin: auto !important;display: block;float: none !important;margin-top: 33px !important;color:black;height: 80px;text-align: center;">
+            <div id="prograssbarother"></div>
+            <ul id="stepprogressother" style="  height: 23px;  position: relative;;background-color: #ccc;border-top-left-radius: 
+               10px;display:block;border-top-right-radius: 10px;border-bottom-right-radius: 10px;border-bottom-left-radius: 10px;
+               padding: 0;margin: auto;">												</ul>
+         </div>
+      </div>
+      <div class="col-md-11" style="margin:auto; text-align:center">
+      <table id="currentbalanceTable" style="display: block;text-align: center;width:100%">
+         <tbody>
+            <tr style="border-top:10px solid #fff;background:#cdd1d0; font-size:14px; color:black;font-weight:bold;">
+               <td style="font-family: arial;padding: 10px;vertical-align: top;border-right: 20px solid #fff !important;width:33.3%">TOTAL BALANCE OWED</td>
+               <td style="font-family: arial;padding: 10px;vertical-align: top;border-right: 20px solid #fff !important;width:33.3%">YOUR ESTIMATED PROGRAM</td>
+               <td style="font-family: arial;padding: 10px;vertical-align: top;border-right: 20px solid #fff !important;width:33.3%">MINIMUM PAYMENT</td>
+            </tr>
+            <tr style="background-color: #05589c;color:#fff;font-size: 20px;">
+               <td id="paybacktotal"data-is-decimal = "false" style="font-size:20px;font-family: arial;padding: 28px;
+                  vertical-align: top;border-right: 20px solid #fff !important;text-align:center;width:33.3%"></td>
+               <td id="payback_total" style="font-size:20px;font-family: arial;padding: 18px;vertical-align: top;border-right: 20px solid #fff !important;text-align:center;width:33.3%"></td>
+               <td id="paybacktotalPaymentDue" style="font-size:20px;font-family: arial;padding: 18px;vertical-align: top;border-right: 20px solid #fff !important;text-align:center;width:33.3%"></td>
+            </tr>
+            <tr style="border-top:10px solid #fff;background:#cdd1d0; font-size:14px; color:black;font-weight:bold;">
+               <td style="font-family: arial;padding: 10px;vertical-align: top;border-right: 20px solid #fff !important;width:33.3%">TOTAL PAID TO DATE</td>
+               <td style="font-family: arial;padding: 10px;vertical-align: top;border-right: 20px solid #fff !important;width:33.3%">TOTAL PAID ON CURRENT PATH</td>
+               <td style="font-family: arial;padding: 10px;vertical-align: top;border-right: 20px solid #fff !important;width:33.3%">INTEREST RATE</td>
+            </tr>
+            <tr style="background-color: #05589c;color:#fff; font-size: 20px">
+               <td id="paybacktotalpaidtodateval"  data-is-decimal = "false" style="font-size:20px;font-family: arial;padding: 28px;vertical-align: top;border-right: 20px solid #fff !important;text-align:center;width:33.3%"></td>
+               <td id="paybacktotalpaid" style="font-size:20px;font-family: arial;padding: 18px;vertical-align: top;border-right: 20px solid #fff !important;text-align:center;width:33.3%"></td>
+               <td id="paypackinterestrate" style="font-size:20px;font-family: arial;padding: 18px;vertical-align: top;border-right: 20px solid #fff !important;text-align:center;width:33.3%"></td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <p style="color:#9f9f9f;font-family: arial; display: block;clear:both"
+      ><br>The information provided is for informational purposes only 
+               and does not establish an attorney-client or
+               business relationship between you and 
+               <% if (logotimberline) { %>
+            Timberline Financial
+         <% } %>
+         <% if (financelogo) { %>
+         Finance Solutions
+         <% } %> or
+               any law firm or business entity to which you may be
+               referred.</p>
+</div>
+</div>

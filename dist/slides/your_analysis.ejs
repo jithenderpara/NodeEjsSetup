@@ -1,0 +1,120 @@
+<div class="slides_div" style="background: #fff;height: 100%;position: relative;float:left">
+	<div class="slides_inner">
+		<div>
+			<div class="goalassement">
+				<img width="100%" style="height: 65px;" src="<%= apppath %>/slides/images/slide_Header.gif" />
+
+				<span style="position: absolute; top: 10px; float: right; right:0px;">
+						<% if (logotimberline) { %>
+							<img style="max-width: 300px;
+							max-height: 50%;
+							height: 50px;
+							margin-top: -7px;font-weight:bold;" src="<%= apppath %>/images/timberline.png" alt="timberline">
+							<% } %>
+							<% if (financelogo) { %>
+							<img class="logo_resp" style="width: 70%; float: right;" src="<%= apppath %>/slides/images/Finance-Solution_LOGO_Header-.png" alt="financesolutions">
+		
+							<% } %>
+					<!-- <img width="70%" src="/slides/images/Finance-Solution_LOGO_Header-.png"> -->
+					</span>
+					<span style="position: absolute;top: 17px;
+          left: 22px;
+          text-align: left;
+          float: left;
+          color: black;
+          font-size: 28px;
+          font-weight: 600;font-family:arial;font-weight:bold
+      ">Your
+            Analysis</span>
+				</header>
+				<div class="row" style=" margin: 0;">
+					<div class="col-md-6 col-sm-6" style="width:320px; float:left">
+						<div style="text-align:left; color: #000000; padding-top: 25px;font-weight:bold; font-family:arial;font-size: 20px;">Your Current Debt Amount
+                
+							<br>
+								<span class="total" id="total_debt" style="font-size: 44px;
+              color: #254585;
+              line-height: 64px;font-family:arial" ></span>
+								<br>
+								</div>
+								<div class="table-responsive mt-4 your-currentdiv">
+									<table cellspace="2" id="monthlyincometable">
+										<tbody style="font-weight:bold; font-size:14px;color:black;font-family:arial">
+											<tr >
+												<td style="font-family:arial;background:#ccc;text-align:left;color: black;border-bottom: 1px solid #fff;padding: .75rem;
+    vertical-align: top;">MONTHLY
+                        INCOME</td>
+												<td id="income" style="font-family:arial;background:#1c4889;color:#fff;padding: .75rem;vertical-align: top;color:#fff;    border-bottom: 1px solid white;
+												"></td>
+												<tr >
+													<td style="font-family:arial;background:#ccc;text-align:left;color: black;border-bottom: 1px solid #fff;padding: .75rem;
+		vertical-align: top;">MONTHLY
+							CARD PAYMENTS</td>
+													<td id="total_payments" style="font-family:arial;background:#1c4889;color:#fff;padding: .75rem;vertical-align: top;color:#fff;    border-bottom: 1px solid white;
+													"></td>
+											</tr>
+											<tr>
+												<td style="font-family:arial;background:#ccc;text-align:left;color: black;border-bottom: 1px solid #fff;padding: .75rem;vertical-align: top;">RECURRING MONTHLY
+                        EXPENSES</td>
+												<td id="expenses" style="font-family:arial;background:#1c4889;color:#fff;padding: .75rem;vertical-align: top;color:#fff;    border-bottom: 1px solid white;
+												"></td>
+											</tr>
+											<tr style="padding-bottom:0px 0px 30px 0px;">
+												<td style="font-family:arial;background:#ccc;text-align:left;color: black;border-bottom: 1px solid #fff;padding: .75rem;vertical-align: top;">CASH
+                        FLOW</td>
+												<td style="font-family:arial;background:#1c4889;color:#fff;padding: .75rem;vertical-align: top;    border-bottom: 1px solid white;
+												" id="cashflow"></td>
+											</tr>
+											<tr style="font-family:arial;background: #fff;">
+												<!-- <td style="height:20px" colspan="2"><span style="height:10px"></span></td> -->
+											</tr>
+											<tr>
+												<td style="font-family:arial;background:#ccc;text-align:left;color: black;border-bottom: 1px solid #fff;;padding: .75rem;vertical-align: top;">STATED DTI</td>
+												<td style="font-family:arial;background:#1c4889;color:#fff;padding: .75rem;vertical-align: top;" id="stateddti"></td>
+											</tr>
+										</tbody>
+									</table>
+									<!-- <div class="text-left p-2"><label style="font-family:arial;width: 450px;">Stated DTI</label><span>XXX</span></div> -->
+								</div>
+								<!-- <h2>KEY AREAS OF CONCERN</h2><ul class="mR-0"><li>High utilization Levels</li><li>Realiance on credit debt</li></ul> -->
+							</div>
+							<div class="col-md-6 col-sm-6" style="width:320px; float:right;">
+								<div class="table-responsive mt-4 your-currentdiv1">
+									<table id="analysistableBind" style="width: 100%;font-family:arial" class="analysistable">
+										<thead id="header">
+											<tr style="font-family:arial;font-size: 18px; background-color: rgba(0,0,0,.05);">
+												<th  style="text-align:left;color: black;border-bottom: 1px solid #fff;padding: .75rem;
+												vertical-align: top;">Current Creditors</th>
+												<th  style="font-size: 18px;font-family:arial;text-align:right;color: black;border-bottom: 1px solid #fff;padding: .75rem;
+												vertical-align: top;width: 57%;">Amount Owed</th>
+											</tr>
+										</thead>
+										<tbody id="tablebind"></tbody>
+										<tfoot id="tablebindfoot"></tfoot>
+									</table>
+								</div>
+							</div>
+							<div style="font-family:arial;margin-top: 30px;float:left;display:block;width:100%">
+							<p style="padding:20px;font-size: 15px">(This analysis is subject to the accuracy of the
+              information you have provided.)</p>
+							<p style="color:#9f9f9f;font-family:arial;">
+The information provided is for informational purposes only 
+and does not establish an attorney-client or business relationship between <br>you and 
+<% if (logotimberline) { %>
+Timberline Financial
+<% } %>
+<% if (financelogo) { %>
+Finance Solutions
+<% } %> or
+any law firm or business entity to which you may be
+referred.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+	</div>
+	
+ 

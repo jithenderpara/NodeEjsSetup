@@ -1,0 +1,213 @@
+<!-- views/partials/head.ejs -->
+
+<head>
+        <meta charset="UTF-8">
+        <title>Touchpoint</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11"/> 
+        <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <link rel="stylesheet" href="/fontawesome/css/fonts.gstatic.css" >
+        <link rel="stylesheet" href="/css/presentation_resp.css" >
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/fontawesome/css/all.css">
+        <link rel="stylesheet" href="/css/client.css">
+        <link rel="stylesheet" href="/css/jquery-ui.css">
+        <link rel="stylesheet" href="/css/toastr.css">
+        <script src="/js/libs/jquery.min.js"></script>
+        <script src="/js/libs/popper.min.js"></script>
+        <script src="/js/libs/bootstrap.min.js"></script>
+        <script src="/js/libs/toastr.min.js"></script>
+        <script src="/js/common.js"></script>
+
+        <style>
+                body {
+                        font-size: .875rem;
+                }
+
+                .feather {
+                        width: 16px;
+                        height: 16px;
+                        vertical-align: text-bottom;
+                }
+
+                /*
+               * Sidebar
+               */
+
+
+                .sidebar {
+                        position: fixed;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        z-index: 100;
+                        /* Behind the navbar */
+                        padding: 0;
+                        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+                }
+
+                .sidebar-sticky {
+                        position: -webkit-sticky;
+                        position: sticky;
+                        top: 48px;
+                        /* Height of navbar */
+                        height: calc(100vh - 48px);
+                        padding-top: .5rem;
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                        /* Scrollable contents if viewport is shorter than content. */
+                }
+
+                .sidebar .nav-link {
+                        font-weight: 500;
+                        color: #333;
+                }
+
+                .sidebar .nav-link .feather {
+                        margin-right: 4px;
+                        color: #999;
+                }
+                
+
+                .sidebar .nav-link.active {
+                        color: #007bff;
+                }
+
+                .sidebar .nav-link:hover .feather,
+                .sidebar .nav-link.active .feather {
+                        color: inherit;
+                }
+
+                .sidebar-heading {
+                        font-size: .75rem;
+                        text-transform: uppercase;
+                }
+
+                /*
+               * Navbar
+               */
+
+                .navbar-brand {
+                        padding-top: .75rem;
+                        padding-bottom: .75rem;
+                        font-size: 1rem;
+                        background-color: #02436D;
+                        box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+                }
+
+                .bg-dark {
+                        background-color: #02436D !important;
+                        /* background-color: rgb(125, 170, 216);*/
+                        padding: 10px !important
+                }
+
+                .navbar .form-control {
+                        padding: .75rem 1rem;
+                        border-width: 0;
+                        border-radius: 0;
+                }
+
+                .form-control-dark {
+                        color: #fff;
+                        background-color: rgba(255, 255, 255, .1);
+                        border-color: rgba(255, 255, 255, .1);
+                }
+
+                .form-control-dark:focus {
+                        border-color: transparent;
+                        box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+                }
+
+                /*
+               * Utilities
+               */
+
+                .border-top {
+                        border-top: 1px solid #e5e5e5;
+                }
+
+                .border-bottom {
+                        border-bottom: 1px solid #e5e5e5;
+                }
+
+                .btn-group.viewdetails {
+                        width: 100%;
+                        display: block;
+                }
+
+                .viewdetails .dropdown-toggle,
+                .show>.dropdown-toggle {
+                        width: 100%;
+                        float: left;
+                        margin: 5px 0
+                                /* background: transparent !important;
+                border: none !important;
+                color: #fff !important; */
+                }
+
+                .showpointer {
+                        padding-top: 190px;
+                }
+                .userinfo {
+                        color: #fff;
+                        line-height: 14px;
+                        vertical-align: bottom;
+                        padding: 0 12px;
+                        font-size: 17px;
+                }
+
+                
+
+                .box {
+                        width: 113px;
+                        height: 100px;
+                        background: #ccc;
+                        margin: 10px;
+                        margin-left: 10px;
+                        float: left;
+                        text-align: center;
+                        padding: 10px;
+                        word-break: break-all;
+                }
+
+                /*.boxcontainer {
+                        display: inline-table;
+                        margin-top: 35px;
+                }*/
+
+                .btn-primary {
+                        color: #fff;
+                        background-color: #02436D;
+                        border-color: #02436D;
+                        float: right;
+                        margin-right: 300px;
+                }
+
+                .userdetails .btn,
+                .userdetails.show .btn {
+                        background: transparent;
+                        border: none;
+                        margin: 0;
+                }
+
+                .logoff i {
+                        margin-right: 5px;
+                }
+
+                .logoff {
+                        color: #fff !important
+                }
+
+                .viewdetails .dropdown-menu.show {
+                        width: 100%;
+                }
+
+                .fas,
+                .fab {
+                        font-size: 20px;
+                }
+        </style>
+       
+</head>

@@ -1,0 +1,151 @@
+<div class="slides_div" id="summary" style="position: relative;float:left;background: #fff; font-family:arial;">
+	<div class="slides_inner">
+		<div>
+			<img width="100%" style="height: 65px;" src="<%= apppath %>/slides/images/slide_Header.gif" />
+
+			<span style="position: absolute; top: 10px; float: right; right:0px; font-family:arial;">
+					<% if (logotimberline) { %>
+						<img style="max-width: 300px;
+						max-height: 50%;
+						height: 50px;
+						margin-top: -7px;font-weight:bold;" src="<%= apppath %>/images/timberline.png" alt="timberline">
+						<% } %>
+						<% if (financelogo) { %>
+						<img class="logo_resp" style="width: 70%;float: right;" src="<%= apppath %>/slides/images/Finance-Solution_LOGO_Header-.png" alt="financesolutions">
+	
+						<% } %>
+				<!-- <img width="70%" src="/slides/images/Finance-Solution_LOGO_Header-.png"> -->
+				</span>
+				<span style="position: absolute;top: 17px;left: 22px;text-align: left;font-family:arial;float: left;color: black;font-size: 28px;font-weight: 500;font-weight:bold">Summary</span>
+			</header>
+			<div style="margin-top:30px;">
+				<table id="summaryTable" cellpadding="5" cellspaceing="10" class="table" style="margin:10px; width:90%; margin:auto;font-family:arial;margin-top:-20px">
+					<tr>
+						<td style="background:#9b1a1b;color:#fff;border: 3px solid white;font-weight:bold; font-size:15px;font-family:arial;text-align: center">YOUR CURRENT BALANCE</td>
+						<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:15px;font-family:arial;text-align: center">CURRENT SITUATION</td>
+						<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:15px;font-family:arial;text-align: center">PROPOSED TERMS</td>
+						<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:15px;font-family:arial;text-align: center">SAVINGS</td>
+					</tr>
+					<tr>
+						<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center">Time To Pay Off</td>
+						<!-- should have years -->
+						<td id="projectedPayOff" data-is-decimal="false" style="background:#1a4b8d  ;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+						<td id="timetopayoffprop" data-is-decimal="false" style="background:#226FC0  ;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+						<td id="timetopayoffsavings" data-is-decimal="false" style="background:#2da356;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+					</tr>
+					<tr>
+						<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center">Total Payments</td>
+						<td id="projectedTotalPaid" style="background:#1a4b8d;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+						<td id="totalcost" style="background:#226FC0;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+						<td id="totalpaysavings" style="background:#2da356;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+					</tr>
+					<tr>
+						<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center">Monthly Payments</td>
+						<td id="totalPaymentDue" style="background:#1a4b8d;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+						<td id="monthlyprop" style="background:#226FC0;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+						<td id="monthlypaysavings" style="background:#2da356;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+					</tr>
+				</table>
+				<div class="col-md-12" >
+					<br>
+						<div class="row">
+							<div class="col-md-6">
+								<div style="text-align:left;color: black;float: left;width: 100%;font-family:arial;margin-left:27px">
+									<span style="font-size: 32px;font-weight:500;display: block;font-family:arial;">
+										Benefits 
+					  </span>
+					  <span style="
+				background-image: -webkit-gradient(linear, left left, left right, from(#93a5bb), to(#fff));
+				background-image: -webkit-linear-gradient(left, #93a5bb, #fff);
+				background-image: -moz-linear-gradient(left, #93a5bb, #fff);
+				background-image: linear-gradient(to right, #93a5bb, #fff) !important;
+				height: 7px !important;
+				width: 53% !important;
+				margin-bottom: 15px;
+				float: left;
+				display: block;
+				font-family:arial;
+			"></span>
+			</div>
+								<ul style="margin-top: 0;float:left;text-align: left;color:black;font-family:arial;line-height: 15px">
+									<li >Typically frees you of your unsecured enrolled debt between 2-4 years.</li>&nbsp;
+                              
+									
+									<li >We negotiate to reduce your principal balance.</li>&nbsp;
+                              
+									
+									<li >One monthly payment which is typically reduced.</li>&nbsp;
+                              
+									<% if (financelogo) { %>
+									 <li>
+									A written minimum performance standard of 35%.
+									
+									</li>&nbsp;
+									  <% } %>
+									<li >All additional late fees and interest that accrue during your program term are typically resolved by your settlements.</li>&nbsp;
+                              
+									
+									<% if (financelogo) { %>
+									 <li>
+									Your law firm is accredited in your state,A rated with the BBB and adheres to minimum performance standards
+									
+									</li>&nbsp;
+									  <% } %>
+ 
+								</ul>
+							</div>
+							<div class="col-md-6" style="text-align:left;margin-top: 20px;font-family:arial;">
+								<div style="text-align:left;color: black;float: left;width: 100%;font-family:arial;margin-left:20px">
+									<span style="font-size: 32px;font-weight:500;display: block;font-family:arial;margin-top: -19px;">
+										Important Information 
+					  </span>
+					  <span style="
+				background-image: -webkit-gradient(linear, left left, left right, from(#93a5bb), to(#fff));
+				background-image: -webkit-linear-gradient(left, #93a5bb, #fff);
+				background-image: -moz-linear-gradient(left, #93a5bb, #fff);
+				background-image: linear-gradient(to right, #93a5bb, #fff) !important;
+				height: 7px !important;
+				width: 53% !important;
+				margin-bottom: 15px;
+				float: left;
+				display: block;
+				font-family:arial;
+			"></span>
+			</div>
+								<ul style="float:left;color:black;font-family:arial;line-height: 15px">
+									<li style="font-family:arial;">Will affect your credit score.</li>&nbsp;
+                                            
+									
+									<li style="font-family:arial;">Program savings may be taxable.</li>&nbsp;
+                                            
+									
+									<li style="font-family:arial;">May result in collections or litigation by creditors or debt collectors.</li>&nbsp;
+                                            
+									
+									<li style="font-family:arial;">Prevents the use of enrolled credit cards.</li>&nbsp;
+                                            
+									
+									<li style="font-family:arial;">Prior to settlement, you may accrue additional charges, fees and interest which will increase the amount you owe.</li>&nbsp;
+                                            
+									
+									<li style="font-family:arial;">Your actual results will depend on factors outside of our control including you making consistent payments to your savings account in the agreed upon amount.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<p style="color:#9f9f9f;float: left;" style="font-family: arial;">The information provided is for informational purposes only 
+               and does not establish an attorney-client or
+               business relationship between you and 
+               <% if (logotimberline) { %>
+            Timberline Financial
+         <% } %>
+         <% if (financelogo) { %>
+         Finance Solutions
+         <% } %> or
+               any law firm or business entity to which you may be
+               referred.</p>
+
+		</div>
+	</div>

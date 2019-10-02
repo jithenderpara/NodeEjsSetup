@@ -1,0 +1,210 @@
+<!-- views/pages/about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Touchpoint</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/css/client.css">
+    <link rel="stylesheet" href="/css/jquery-ui.css">
+    
+    <script src="/js/libs/jquery.min.js"></script>
+    <script src="/js/libs/popper.min.js"></script>
+    <script src="/js/libs/bootstrap.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/libs/socket.io/2.0.4/socket.io.js"></script>
+    <title></title>
+    <style>
+        .PresentationWrapper{
+        width: 80%;
+    }
+    .viewImg {
+    max-width: 100%;
+    max-height: 100%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+#iframe .slides_div{
+    border:1px solid #ccc;
+}
+.tab-pane.active, #slidecontainer{
+    font-size: 14px;
+
+}
+#iframe .innderDiv{
+    margin:auto;
+}
+table.analysistable tbody{
+    overflow: hidden;
+}
+
+#Modification{
+    height:650px;
+}
+/*.slides_div{
+    float:none !important;
+}
+.slides_inner .goalassesment{
+    height: 600px;
+}*/
+    </style>
+</head>
+
+<body>
+      <div class="container-fluid">
+        <div class="row">
+            <br>
+            <main role="main" class="col-md-12">
+                <input type="hidden" value="<%= documentname %>" id="documentname">
+                <input type="hidden" value="<%= Mgremailid %>" id="mgremailid">
+                <div class="row">
+                    <% if (isToken) { %>
+                    <div class="col-md-8" id="slidecontainer" style="margin: auto;margin-top: 23px;">
+                            <div style="max-height:800px;text-align: center;" id="scrollingDiv">
+                                <img src="" id="imgdata" style="max-width:100%; max-height:100%;border: 0 solid #ccc;"/>
+                                <div class="pointerdiv" id="pointerdiv" style="display: none; position: fixed;z-index: 999;">
+                                    <img style='width: 60px;margin:-13px' src='/images/mouse-pointer.svg'>
+                                </div>
+                                <div id="iframe"></div>
+                            </div>
+                    </div>
+                    <% } %>
+                    <% if (!isToken) { %>
+                    <h1>Link expired, please contact your Financial Consultant </h1>
+
+                    <% } %>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script>
+    
+        // if ($("#documentname").val() != "")
+           // loadImage($("#documentname").val())
+        //document.getElementById('scrollingDiv').style.pointerEvents = 'none';
+        function loadImage(docname) {
+            DoAjaxCall({}, "docs/view/" + docname, "GET", true, function (data) {
+                if (data.status) {
+                    var content = "";
+                    var imgArr = data.data;
+                    for (var i = 0; i < imgArr.length; i++) {
+                        content += "<img id='showImage_" + (i + 1) + "' src='/" + imgArr[i].path + "' class='viewImg' style='display:none'>"
+                    }
+                    $("#scrollingDiv").html(content)
+                }
+                else {
+                    alert(data.message)
+                }
+                $("#showImage_1").show();
+            })
+
+        };
+        $(function () {
+            var socket = io('ws://localhost:3000', {transports: ['websocket']});
+socket.on('connect', function () {
+  console.log('connected!');
+  // shareTestFun();
+  socket.emit('greet', { message: 'Hello Mr.Server!' });
+
+            var _host = window.location.host;
+            // var socket = io(_host, {transports: ['websocket']});
+            // var socket = io('ws://localhost:3000', {transports: ['websocket']});
+            
+            // var socket = io.connect(_host),
+            _document=null;
+            var username = window.location.href;
+            username = username.split("/")[4]
+            socket.emit("new user", { "username": username});
+            socket.on("Scrollingdivwithid",function(data){
+                // console.log(data);
+                if(data.msg){
+                    var _datamsg=data.msg;
+                    $("#tablebind").scrollTop(parseInt(_datamsg.top))
+                      console.log("called-->"+_datamsg.top)
+                }
+              
+           })
+           socket.on("ClientExit",function(data){
+               console.log("ClientExit")
+               console.log(data)
+               
+           })
+           socket.on("salesrep connected",function(data){
+               console.log("sales rep refresh or connected again"+JSON.stringfy(data))
+
+           })
+           socket.on("showPointer",function(data){
+               console.log(data);
+               if(data.show){
+               $("#pointerdiv").show();
+               $("#pointerdiv").css({
+                   left:data.left,
+                   top:data.top
+               })
+               }
+
+           });
+            socket.on("new message", function(data) {
+                console.log("new msg")
+                
+                var _data =data;// JSON.parse(data)
+                if(!data.isshowonline){
+                    socket.emit("new user", { "username": username}); 
+                }               
+                if( _data.msg=="End Presentation")
+                {
+                    $("#scrollingDiv").html("<h4>Your presentation has ended. If you have any questions please reach out to your financial consultant</h4>")
+                     socket.disconnect();
+                }
+                else if(_data.document=="video"){
+                    var _valImg= _data.msg;
+                    $("#scrollingDiv").html('<video id="slidevideo" width="100%" height="100%" controls>'+
+                '<source src="/'+_valImg+'" type="video/mp4">'+
+                'Your browser does not support the video tag.'+
+              '</video>');
+                }
+                
+                else{
+                    if(_data.document!=_document){
+                        _document=_data.document
+                        socket.emit("new user", { "username": username });
+                  //window.location.reload() 
+                }
+                if(data.ishtml||data.ishtml==true){
+                        $("#iframe").html(_data.msg);
+                        $("#imgdata").attr("src", "");
+                }
+                else{
+                        $("#imgdata").attr("src", _data.msg);
+                        $("#iframe").html("");
+                }
+               
+                if(_data.document=="documents") $("#imgdata").css({"border":"1px solid #ccc"})
+                else{
+                    $("#imgdata").css({"border":"0 solid #ccc"})
+                }
+            }
+                // if (_data.presentationType == "documents") {
+
+                //    $("#imgdata").css({"border":"1px solid #ccc"})
+                // }
+            })
+
+            });
+           
+        })
+
+
+    </script>
+    <footer><% include ../partials/footer-logo %></footer>
+    </body>
+
+</html>

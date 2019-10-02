@@ -1,0 +1,113 @@
+<!-- views/partials/header.ejs -->
+<% include head %>
+<div >
+
+
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0" style="top: 0;width: 100%;">
+        <div class="">
+               
+                      
+                        <img id="logoImg" data-logo="Timberline financial" style="width: 204px;" src="/images/timberline.png" alt="timberline">
+                        
+                
+                <label class="userinfo" id= "law_firm" style="margin-top:5px">
+                        <i class="fab fa-wpforms"></i>&nbsp;
+                        <i>
+                                <strong>Law-firm Name</strong>
+                        </i>
+                </label>
+                <div class="btn-group userdetails">
+
+                        <button type="button" class="btn btn-secondary dropdown-toggle" id="applicant_name" data-toggle="dropdown"
+                                aria-haspopup="true">
+                                <strong>Client Name</strong>
+                                <!-- <i>Ananya</i> -->
+                        </button>
+
+                        <div class="dropdown-menu dropdown-menu">
+                                <button class="dropdown-item" type="button" id="clientemailid"><%= Clientdetails.email %></button>
+                                <button class="dropdown-item" type="button">Lead ID:
+                                        <%= Clientdetails.leadid %>
+                                </button>
+                              
+                               
+
+                        </div>
+                         <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#change_emailModal" style="font-weight:bold;border:1px solid white; border-radius:25px">Send
+                                        Link</button>
+                       
+                </div>
+                
+                               
+                        
+
+
+        </div>
+        
+        </li>
+        </ul>
+        <div class=" float-right">
+        
+                <button class="btn btn-success" style="display:none" type="button" id="clientOnline">
+                </button>
+                <button class="btn btn-secondary" type="button" data-toggle="modal" data-target="#emailModal" 
+                style="font-weight:bold;border:1px solid white;border-radius:25px;background: transparent;margin: 0 20px;">
+            Send PDF
+          </button>
+                <span class="float-right m-2"><a href="/logout" class="logout">Logout</a></span>
+        </div>
+</nav>
+</div>
+<!-- Modal -->
+<div id="change_emailModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                        <div class="modal-header">
+                                <h4 class="modal-title">Send link</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                                <form id="emailform">
+                                        <div class="group">
+                                                <label class="label">Client Email id</label>
+                                                <input type="email" class="input" value=<%=Clientdetails.email %> required id = "client_emailid">
+                                        </div>
+                                </form>
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" id="sendlink" data-dismiss="modal">Send</button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                </div>
+
+        </div>
+</div>
+
+<script src="/js/libs/jquery.validate.js"></script>
+<script type="text/javascript">
+
+        function getValue() {
+                var retVal = prompt("Send link to this email : ", "client email here");
+                //       document.write("You have entered : " + retVal);
+        }
+        $(function () {
+                $("#emailform").validate({
+                        rules: {
+                                client_emailid: {
+                                        required: true,
+                                        email: true
+                                },
+
+
+                        },
+                        messages: {
+                        }
+
+                });
+
+               
+        })
+        
+</script>

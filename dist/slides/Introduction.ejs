@@ -1,0 +1,43 @@
+<div class="slides_div" style='background-image: url("<%= apppath %>/slides/images/new_intro_b.jpg");
+   text-align: right;
+   padding: 10px;
+   background-size: 109% 100%;
+   display: block;
+   float: left;position: relative;
+   width: 100%;' id="introduction">
+   <div class="slides_inner" style="min-height: 400px;">
+      <div style="float: left;width: 176px;padding: 20px;">
+         <% if (logotimberline) { %>
+         <img style="max-width: 250%;max-height: 100%;height: 95px;" src="<%= apppath %>/images/timberline.png" alt="timberline">
+         <% } %>
+         <% if (financelogo) { %>
+         <img style="max-width: 100%;max-height: 100%;height: 95px;" src="<%= apppath %>/slides/images/Finance-Solutions_LOGO.png" alt="financesolutions">
+         <% } %>
+      </div>
+      <div class="analysis-bg img-fluid" style="text-align: right !important;
+         padding-top: 179px; width: 510px;
+         color: #000">
+         <div style="width: 500px;border-right: 10px solid #62ccf6;padding: 0 40px 30px 20px;">
+            <div class="mob_responsive" style="font-family: Verdana, Geneva, sans-serif;font-size: 20px;color: #6c6c6c;">Analysis Prepared For</div>
+            <div class="mob_responsive" style="font-family: Verdana, Geneva, sans-serif;font-size: 35px; font-weight:bold;" id="ApplicantName"></div>
+            <div class="mob_responsive" style="font-family: Verdana, Geneva, sans-serif;font-size: 18px;color: #474747;" id="todaydate"></div>
+            <p style="font-size: 18px;font-family: Verdana, Geneva, sans-serif;
+               margin: 10px 0px 0px;
+               text-align: justify;
+               font-weight: 400;
+               color: #828282">The information provided is for informational purposes only 
+               and does not establish an attorney-client or
+               business relationship between you and 
+               <% if (logotimberline) { %>
+            Timberline Financial
+         <% } %>
+         <% if (financelogo) { %>
+         Finance Solutions
+         <% } %> or
+               any law firm or business entity to which you may be
+               referred.
+            </p>
+         </div>
+      </div>
+   </div>
+</div>

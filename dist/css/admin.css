@@ -1,0 +1,83 @@
+.left-nav {
+  background: #7ea7c1;
+  position: fixed;
+  width: 200px;
+  height: 100%;
+}
+.left-nav ul {
+  display: block;
+}
+.left-nav ul li {
+  display: block;
+}
+.admin-logo {
+    margin-right: 70px
+}
+.bg-dark {
+  background-color: #02436d !important;
+  padding: 12px 10px !important;
+}
+.topnav {
+  float: left;
+}
+.topnav li {
+  display: inline-block;
+}
+.topnav li a, .topnav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    line-height: 93px;
+}
+.group {
+  display: block;
+  margin-bottom: 13px;
+  width: 100%;
+}
+.group .r-label {
+  min-width:100%;
+}
+.group .input {
+  padding: 6px 5px;
+  width:100%;
+}
+.header{
+  text-align: left;
+}
+.header span{
+  font-size: 40px;
+}
+.logout {
+  color: #fff;
+}
+.logout:hover {
+  color: #fff;
+}
+#invalid_date{
+  margin-top: 30px
+}
+#invalid_date ul li{
+list-style-type: disc
+}
+#invalid_date ul li:first-child{
+  list-style-type: none;
+}
+form .form-control.error {
+  border: 2px solid #eb6b6b !important;
+}
+
+form label.error {
+  /* float: left; */
+  /* display: block; */
+  padding-left: 10px;
+  font-size: 15px;
+  display: none !important;
+}
+div#usertable_wrapper {
+  max-width: 100%;
+  overflow: auto;
+}
+#status.error{
+  color: red;
+  font-size: 19px;
+}

@@ -1,0 +1,80 @@
+<div class="slides_div" id="summary" style="position: relative;float:left;background: #fff; font-family:arial;">
+	<div class="slides_inner">
+		<img width="100%" style="height: 65px;" src="<%= apppath %>/slides/images/slide_Header.gif" />
+		<span style="position: absolute; top: 10px; float: right; right:0px; font-family:arial;">
+		<% if (logotimberline) { %>
+		<img style="max-width: 300px;
+			max-height: 50%;
+			height: 50px;
+			margin-top: -7px;font-weight:bold;" src="<%= apppath %>/images/timberline.png" alt="timberline">
+		<% } %>
+		<% if (financelogo) { %>
+		<img class="logo_resp" style="width: 70%;float: right;" src="<%= apppath %>/slides/images/Finance-Solution_LOGO_Header-.png" alt="financesolutions">
+		<% } %>
+		</span>
+		<span style="position: absolute;top: 17px;left: 22px;text-align: left;font-family:arial;float: left;color: black;font-size: 28px;font-weight: 500;font-weight:bold">Client-Savings</span>
+		</header>
+		<div style="margin-top:30px;">
+		<table id="summaryTable_Saving" cellpadding="5" cellspaceing="10" class="table" style="margin:10px; width:90%; margin:auto;font-family:arial;margin-top:-20px">
+			<tr>
+				<td style="background:#9b1a1b;color:#fff;border: 3px solid white;font-weight:bold; font-size:15px;font-family:arial;text-align: center">YOUR CURRENT BALANCE</td>
+				<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:15px;font-family:arial;text-align: center">CURRENT SITUATION</td>
+				<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:15px;font-family:arial;text-align: center">PROPOSED TERMS</td>
+				<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:15px;font-family:arial;text-align: center">SAVINGS</td>
+			</tr>
+			<tr>
+				<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center">Time To Pay Off</td>
+				<!-- should have years -->
+				<td id="projectedPayOff_Saving" data-is-decimal="false" style="background:#1a4b8d  ;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+				<td id="timetopayoffprop_Saving" data-is-decimal="false" style="background:#226FC0  ;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+				<td id="timetopayoffsavings_Saving" data-is-decimal="false" style="background:#2da356;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+			</tr>
+			<tr>
+				<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center">Total Payments</td>
+				<td id="projectedTotalPaid_Saving" style="background:#1a4b8d;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+				<td id="totalcost_Saving" style="background:#226FC0;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+				<td id="totalpaysavings_Saving" style="background:#2da356;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+			</tr>
+			<tr>
+				<td style="background:#dee2e6;color:black;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center">Monthly Payments</td>
+				<td id="totalPaymentDue_Saving" style="background:#1a4b8d;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+				<td id="monthlyprop_Saving" style="background:#226FC0;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+				<td id="monthlypaysavings_Saving" style="background:#2da356;color:#fff;border: 3px solid white;font-weight:bold; font-size:16px;font-family:arial;text-align: center"></td>
+			</tr>
+		</table>
+		<div class="item inactive" style="float: left;
+			width: 94%;
+			display: block;
+			margin: 0 30px;
+			font-family:arial;
+			font-size: 20px;
+			line-height: 31px;">
+			<div class="imgWrap" style="margin-top:20px; font-family:arial;">
+				<div style="margin-bottom:30px; font-family:arial;float: left;
+					width: 100%;text-align:left">
+					<ul>
+					<li>A payment  that is <span id="monthlypaysavings_Saving_span"></span>  less than your current monthly minimum payments </li>
+					<li>Free of your <span id="total_debt_saving"></span> of enrolled debt in <span id="timetopayoffprop_Saving"></span></li>
+					<li>One simple monthly payment</li>
+					<li>A total balance reduced by an estimated <span id="totalpaysavings_span"></span></li>
+					<li>A total annual savings of <span id="annual_savings"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div>
+			<p style="color:#9f9f9f;font-family: arial; display: block; clear: both;"><br>The information provided is for informational purposes only 
+               and does not establish an attorney-client or
+               business relationship between you and 
+               <% if (logotimberline) { %>
+           Timberline Financial
+         <% } %>
+         <% if (financelogo) { %>
+         Finance Solutions
+         <% } %> or
+               any law firm or business entity to which you may be
+               referred.</p>
+		</div>
+		</div>
+	</div>
+</div>
