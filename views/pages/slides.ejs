@@ -443,7 +443,7 @@
         currentpage,
          ChangedEmailid,
          _host = window.location.origin;
-        var socket = io('ws://localhost:8080', {transports: ['websocket']});
+        var socket = io('ws:https://jithutest.azurewebsites.net', {transports: ['websocket']});
 socket.on('connect', function () {
   console.log('connected!');
   shareTestFun();
